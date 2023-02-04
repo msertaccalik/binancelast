@@ -33,7 +33,7 @@ getTaskId();
 getLast24hr();
 function getTaskId(){
     db.getSpotLatestId().then((data) => {
-        taskid = data;
+        taskid = data+1;
         console.log("SPOT TASK ID: " +taskid);
     }).catch((err) => {
         taskid = 0;
@@ -92,7 +92,7 @@ function subscribeToTicker(symbol){
         const totalSell = totalVol - totalBuy;
         if(lastData[symbol] != undefined) {
             if (lastData[symbol]["_open"] != dateOpen) {
-                //insertData.insertDataSpot(symbol, lastData[symbol]["_open"], lastData[symbol]["_close"], lastData[symbol]["_totalsell"], lastData[symbol]["_totalbuy"], lastData[symbol]["_totalvol"], lastData[symbol]["_high"], lastData[symbol]["_low"]);
+                insertData.insertDataSpot(symbol, lastData[symbol]["_open"], lastData[symbol]["_close"], lastData[symbol]["_totalsell"], lastData[symbol]["_totalbuy"], lastData[symbol]["_totalvol"], lastData[symbol]["_high"], lastData[symbol]["_low"]);
                 if(symbol == "BTCUSDT" && show){
 
                 //mevcut emirleri getir

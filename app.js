@@ -11,6 +11,7 @@ const getOrderHistoryController = require('./controllers/getOrderHistory');
 const buyOrder = require('./controllers/buyOrder');
 const sellOrder = require('./controllers/sellOrder');
 const getOpenTask = require('./controllers/getOpenTask');
+const sellAll = require('./controllers/sellAll');
 const fs = require("fs");
 const util = require("util");
 const port = 3000;
@@ -24,6 +25,7 @@ app.use('/api/changeShow', changeController);
 app.use('/api/getBalance', getBalanceController);
 app.use('/api/getOrderHistory', getOrderHistoryController)
 app.use('/api/sellOrder', sellOrder);
+app.use('/api/sellAll', sellAll);
 app.use('/api/buyOrder', buyOrder);
 app.use('/api/getOpenTask',getOpenTask);
 console.log("running");
